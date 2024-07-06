@@ -27,7 +27,7 @@ This project implements a RISC-V assembler and a branch predictor simulator in C
 * branch_predictor.cpp: Implementation of the branch predictor simulator.
 * README.md: Project documentation.
 * testcases.zip: Directory containing test cases (bubble sort, quick sort, sqrt test).
-* branch_predictor_report: A report containing the information regarding the regarding the different branch prediction techniques used and the accuracy of each * * branch prediction technique
+* branch_predictor_report: A report containing the information regarding the regarding the different branch prediction techniques used and the accuracy of each branch prediction technique
 
 # Usage
 # Assembler
