@@ -32,4 +32,7 @@ branch_predictor_report: A report containing the information regarding the regar
 # Usage
 # Assembler
 # 1. Compile:
+```terminal
+g++ assembler.cpp -o assembler
+```
 
