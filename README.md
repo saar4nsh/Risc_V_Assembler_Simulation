@@ -12,15 +12,15 @@ This project implements a RISC-V assembler and a branch predictor simulator in C
 * Segments: Code, data, heap, and stack segments.
 
 # Branch Predictor
-# Methods:
-Always taken
-Always not-taken
-1-bit dynamic predictor
-2-bit dynamic predictor
-# Components:
-Branch target buffer
-History table
-Output: Overall accuracy of the branch predictor and the branch target buffer.
+* Methods:
+  * Always taken
+  * Always not-taken
+  * 1-bit dynamic predictor
+  * 2-bit dynamic predictor
+* Components:
+  * Branch target buffer
+  * History table
+  * Output: Overall accuracy of the branch predictor and the branch target buffer.
 
 # File Structure
 assembler.cpp: Implementation of the RISC-V assembler.
