@@ -26,5 +26,10 @@ Output: Overall accuracy of the branch predictor and the branch target buffer.
 assembler.cpp: Implementation of the RISC-V assembler.
 branch_predictor.cpp: Implementation of the branch predictor simulator.
 README.md: Project documentation.
-testcases/: Directory containing test cases (bubble sort, quick sort, sqrt test).
+testcases.zip: Directory containing test cases (bubble sort, quick sort, sqrt test).
 branch_predictor_report: A report containing the information regarding the regarding the different branch prediction techniques used and the accuracy of each branch prediction technique
+
+# Usage
+# Assembler
+# 1. Compile:
+
