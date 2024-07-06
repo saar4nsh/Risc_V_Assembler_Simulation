@@ -70,6 +70,6 @@ andi x5, x6, 10
 ...
 ```
 # Contact
-Name: Saaransh Sharma
-GitHub: saar4nsh
+* Name: Saaransh Sharma
+* GitHub: saar4nsh
 
