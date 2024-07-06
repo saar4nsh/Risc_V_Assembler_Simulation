@@ -5,11 +5,11 @@ This project implements a RISC-V assembler and a branch predictor simulator in C
 
 # Features
 # Assembler
-Input: RISC-V assembly code in a .asm file.
-Output: Machine code in a .mc file.
-Instruction Support: Limited to 31 RISC-V 32-bit ISA instructions (R, I, S, SB, U, UJ formats).
-Assembler Directives: .text, .data, .byte, .half, .word, .dword, .asciz.
-Segments: Code, data, heap, and stack segments.
+* Input: RISC-V assembly code in a .asm file.
+* Output: Machine code in a .mc file.
+* Instruction Support: Limited to 31 RISC-V 32-bit ISA instructions (R, I, S, SB, U, UJ formats).
+* Assembler Directives: .text, .data, .byte, .half, .word, .dword, .asciz.
+* Segments: Code, data, heap, and stack segments.
 
 # Branch Predictor
 # Methods:
@@ -69,4 +69,7 @@ andi x5, x6, 10
 0x4    0x00A28333    add x6 x5 x10
 ...
 ```
+# Contact
+Name: Saaransh Sharma
+GitHub: saar4nsh
 
