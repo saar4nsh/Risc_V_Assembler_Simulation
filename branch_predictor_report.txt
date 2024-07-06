@@ -1,0 +1,99 @@
+1.Always_taken branch predictor : One of the most basic types of branch prediction methods seen in computer processors is the "always taken" 
+branch predictor.This predictor,as its name implies, consistently forecasts that a branch will be chosen, independent of the branch's actual
+result.
+This is how it operates:
+Prediction: The predictor consistently forecasts that a branch instruction will be executed whenever it appears during program 
+execution.
+Execution: The processor retrieves and runs instructions from the destination location given by the branch instruction, acting as
+ though the branch is always taken.
+Accuracy: Although this predictor is quite straightforward, in actual use, it is also rather imprecise. Every time a branch is not taken,
+ it basically ignores the real branch conclusion, which causes forecasts to be off.
+Performance Impact: Despite its simplicity and low accuracy, an "always taken" predictor can still provide some benefit in situations
+ where branches are mostly taken. However, its performance impact is generally limited compared to more sophisticated predictors.
+
+
+
+
+
+2.Always_not-taken branch predictor: Another fundamental type of branch prediction mechanism seen in computer processors is the "always not taken"
+ branch predictor. This predictor, in contrast to the "always taken" predictor, consistently forecasts that a branch will not be taken,
+  independent of the branch's actual result.
+This is how it operates:
+Prediction: The predictor consistently forecasts that a branch instruction won't be executed whenever it appears during program execution.
+Execution: After the branch instruction, the CPU retrieves and executes instructions in a sequential manner, acting as though the branch is
+ never taken.
+Accuracy: The "always not taken" predictor is as straightforward and prone to extreme inaccuracy as the "always taken" predictor. It ignores
+ the branch's actual result, which causes forecasts to be off each time the branch is taken.
+Performance Impact: While the "always not taken" predictor can provide some benefit in scenarios where branches are mostly not taken, its 
+overall impact on performance is limited due to its low accuracy.
+
+
+
+
+3.One-bit branch predictor: Computer processors utilize a basic kind of branch predictor called a one-bit predictor, or single-bit predictor, 
+to forecast the result of conditional branch instructions. A one-bit predictor simply has two states: taken or not taken. More complicated 
+predictors employ multiple bits to indicate different states and confidence levels.
+This is how it operates:
+Initial State: Upon encountering a branch instruction for the first time, the predictor is initialized with a state that is typically set
+ to "not taken."
+Prediction: Based on its present state, the predictor forecasts the result of each branch instruction that is fetched. The predictor 
+forecasts that the branch will be taken if the state is "taken," and that it won't be taken if the state is "not taken."
+Feedback: Based on whether the prediction was right or wrong, the predictor modifies its state when the branch is resolved, or the actual 
+result is ascertained. The status might not alter if the forecast proved accurate, or it might support the present prediction. The state 
+is reversed to reflect the true result if the forecast proved to be inaccurate.
+Accuracy: One-bit predictors are often not very sophisticated and have a restricted range of accuracy, particularly when it comes to branches
+with dynamic patterns or complicated behavior. They could have a significant misprediction rate, especially in cases when branch results
+fluctuate a lot.
+Speed Impact: By enabling the processor to execute instructions speculatively without waiting for the actual branch conclusion, 
+one-bit predictors, despite their simplicity, can nonetheless offer some speed gains. Nevertheless, their effect on output is
+
+
+
+
+4.Two-bit branch predictor: In comparison to the one-bit predictor, a two-bit branch predictor is a more advanced kind of branch predictor.
+To monitor the prediction history and increase forecast accuracy, it uses two bits per branch. Four distinct states—representing varying
+degrees of confidence in the prediction of branch outcomes—are made feasible by the extra bit.
+This is how it operates:
+Initial State: The two-bit predictor begins with an initial state when it encounters a branch instruction for the first time, just like the
+one-bit predictor. Generally speaking, this condition denotes weakly not taken.
+Prediction States: Each branch's prediction state is kept up to date by the two-bit predictor, which is represented by two bits. The following 
+four states are possible:
+Strongly Taken (ST): The prediction indicates a high degree of confidence in the take-up of the branch.
+Weakly Taken (WT): The predictor is less confident in its prediction that the branch will be taken.
+Weakly Not Taken (WN): With reduced confidence, the predictor forecasts that the branch won't be taken.
+Strongly Not Taken (SN): This indicates that the predictor is very certain that no one will pick the branch.
+Prediction: The predictor uses the two-bit state of the branch instruction to forecast its result when it is fetched. The predictor forecasts
+that the branch will be taken if the state is either ST or WT. The predictor forecasts that the branch won't be taken 
+if the state is SN or WN.
+Execution: The processor retrieves and carries out instructions in accordance with the two-bit predictor's prediction.
+Feedback: Based on whether the prediction was right or wrong, the predictor modifies its state when the branch is resolved, or the actual
+result is ascertained. In order to reflect the prediction history, the predictor modifies the two-bit state appropriately. The predictor
+might change from WT to ST, for instance, if a branch is regularly chosen, indicating rising
+Accuracy: Because two-bit predictors are better at capturing patterns in branch behavior and making adjustments for changes in branch 
+outcomes over time, they offer higher accuracy than one-bit predictors. They often deliver more consistent performance and are more resistant
+ to sporadic errors in forecasting.
+Performance Impact: By lowering the quantity of pipeline delays brought on by branch instructions, two-bit predictors help to increase processor
+ performance. They improve overall throughput by enabling the CPU to more confidently execute instructions speculatively.
+
+
+
+
+Bubble_sort:
+Accuracy of always-taken branch predictor: 52.0228%
+Accuracy of always-nottaken branch predictor: 47.9772%
+Accuracy of one-bit branch predictor: 46.4344%
+Accuracy of two-bit branch predictor: 70.5702%
+
+
+Sqrt_test:
+Accuracy of always-taken branch predictor: 61.58%
+Accuracy of always-nottaken branch predictor: 38.42;
+Accuracy of one-bit branch predictor: 63.7996%
+Accuracy of two-bit branch predictor: 73.7717%
+
+
+qsort_test:
+Accuracy of always-taken branch predictor: 99.9451%
+Accuracy of always-nottaken branch predictor: 0.0549156%
+Accuracy of one-bit branch predictor: 99.8889%
+Accuracy of two-bit branch predictor: 99.9426%
