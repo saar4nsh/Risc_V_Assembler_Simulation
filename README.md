@@ -35,4 +35,38 @@ branch_predictor_report: A report containing the information regarding the regar
 ```terminal
 g++ assembler.cpp -o assembler
 ```
+# 2. Run:
+```terminal
+./assembler input.asm output.mc
+```
+# Branch Predictor
+# Compile:
+```terminal
+g++ branch_predictor.cpp -o branch_predictor
+```
+
+# Run:
+```terminal
+./branch_predictor trace_file.txt
+```
+
+# Example
+# Assembler Input ("input.asm"):
+```asm
+.text
+add x1, x2, x3
+andi x5, x6, 10
+```
+# Assembler Output ("output.mc"):
+```text
+0x0 0x003100B3
+0x4 0x00A37293
+0x8 0x00000000
+```
+# Branch Predictor Trace ("trace_file.txt"):
+```text
+0x0    0x00000293    addi x5 x0 0
+0x4    0x00A28333    add x6 x5 x10
+...
+```
 
